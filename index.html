@@ -1,0 +1,902 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="Academic portfolio of Dr. Getnet Tesfaw Demsie, Assistant Professor of Social Psychology at Wollo University, Ethiopia.">
+<title>Dr. Getnet Tesfaw Demsie | Academic Portfolio</title>
+
+<style>
+:root {
+    --primary: #102c46;
+    --secondary: #176b87;
+    --accent: #d5a84b;
+    --light: #f4f7fa;
+    --white: #ffffff;
+    --text: #263746;
+    --muted: #687887;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: "Segoe UI", Arial, sans-serif;
+    color: var(--text);
+    line-height: 1.7;
+    background: var(--white);
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+header {
+    background: var(--primary);
+    color: var(--white);
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+}
+
+nav {
+    max-width: 1200px;
+    margin: auto;
+    padding: 17px 25px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo {
+    font-size: 21px;
+    font-weight: 700;
+    color: var(--white);
+}
+
+.logo span {
+    color: var(--accent);
+}
+
+.nav-links {
+    display: flex;
+    gap: 22px;
+    list-style: none;
+}
+
+.nav-links a {
+    color: white;
+    font-size: 14px;
+    transition: 0.3s;
+}
+
+.nav-links a:hover {
+    color: var(--accent);
+}
+
+.menu-toggle {
+    display: none;
+    background: none;
+    border: none;
+    color: white;
+    font-size: 28px;
+    cursor: pointer;
+}
+
+.hero {
+    background: linear-gradient(120deg, #102c46, #176b87);
+    color: white;
+    padding: 100px 25px;
+}
+
+.hero-container {
+    max-width: 1100px;
+    margin: auto;
+    display: flex;
+    align-items: center;
+    gap: 65px;
+}
+
+.profile-image {
+    width: 240px;
+    height: 270px;
+    border: 5px solid rgba(255,255,255,0.3);
+    border-radius: 15px;
+    object-fit: cover;
+    background: #dce5eb;
+}
+
+.hero h1 {
+    font-size: 42px;
+    line-height: 1.2;
+    margin-bottom: 15px;
+}
+
+.hero h2 {
+    color: #f0c96c;
+    font-size: 20px;
+    font-weight: 500;
+    margin-bottom: 20px;
+}
+
+.hero p {
+    max-width: 700px;
+    color: #e7eef4;
+}
+
+.hero-buttons {
+    margin-top: 28px;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 15px;
+}
+
+.btn {
+    display: inline-block;
+    padding: 11px 23px;
+    border-radius: 5px;
+    font-weight: 600;
+}
+
+.btn-primary {
+    background: var(--accent);
+    color: var(--primary);
+}
+
+.btn-outline {
+    border: 1px solid white;
+    color: white;
+}
+
+section {
+    padding: 75px 25px;
+}
+
+.container {
+    max-width: 1100px;
+    margin: auto;
+}
+
+.section-title {
+    text-align: center;
+    margin-bottom: 45px;
+}
+
+.section-title h2 {
+    font-size: 30px;
+    color: var(--primary);
+}
+
+.section-title span {
+    display: block;
+    width: 60px;
+    height: 4px;
+    background: var(--accent);
+    margin: 12px auto;
+}
+
+.section-title p {
+    color: var(--muted);
+}
+
+.about-grid {
+    display: grid;
+    grid-template-columns: 1.5fr 1fr;
+    gap: 40px;
+}
+
+.about-text p {
+    margin-bottom: 15px;
+}
+
+.info-card {
+    background: var(--light);
+    padding: 25px;
+    border-left: 4px solid var(--secondary);
+    border-radius: 6px;
+}
+
+.info-card h3 {
+    color: var(--primary);
+    margin-bottom: 15px;
+}
+
+.info-card p {
+    margin-bottom: 10px;
+}
+
+.light-section {
+    background: var(--light);
+}
+
+.cards {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 22px;
+}
+
+.card {
+    background: white;
+    padding: 25px;
+    border-radius: 9px;
+    box-shadow: 0 3px 15px rgba(0,0,0,0.06);
+    border-bottom: 3px solid var(--secondary);
+    transition: 0.3s;
+}
+
+.card:hover {
+    transform: translateY(-5px);
+}
+
+.card h3 {
+    color: var(--primary);
+    margin-bottom: 12px;
+}
+
+.card p {
+    color: var(--muted);
+    font-size: 15px;
+}
+
+.timeline {
+    border-left: 3px solid var(--secondary);
+    padding-left: 30px;
+}
+
+.timeline-item {
+    position: relative;
+    margin-bottom: 35px;
+}
+
+.timeline-item::before {
+    content: "";
+    position: absolute;
+    left: -39px;
+    top: 8px;
+    width: 13px;
+    height: 13px;
+    background: var(--accent);
+    border-radius: 50%;
+}
+
+.timeline-item h3 {
+    color: var(--primary);
+}
+
+.timeline-item .date {
+    color: var(--secondary);
+    font-weight: 600;
+}
+
+.publication {
+    background: var(--light);
+    margin-bottom: 18px;
+    padding: 22px;
+    border-radius: 7px;
+}
+
+.publication h3 {
+    color: var(--primary);
+    font-size: 17px;
+    margin-bottom: 8px;
+}
+
+.publication p {
+    color: var(--muted);
+}
+
+.publication a {
+    display: inline-block;
+    margin-top: 8px;
+    color: var(--secondary);
+    font-weight: 600;
+}
+
+.contact {
+    background: var(--primary);
+    color: white;
+}
+
+.contact .section-title h2 {
+    color: white;
+}
+
+.contact-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 25px;
+    text-align: center;
+}
+
+.contact-item {
+    padding: 25px;
+    background: rgba(255,255,255,0.08);
+    border-radius: 8px;
+}
+
+.contact-item h3 {
+    color: var(--accent);
+    margin-bottom: 10px;
+}
+
+footer {
+    background: #091c2c;
+    color: #c5d0da;
+    text-align: center;
+    padding: 22px;
+    font-size: 14px;
+}
+
+@media(max-width: 850px) {
+    .menu-toggle {
+        display: block;
+    }
+
+    .nav-links {
+        display: none;
+        position: absolute;
+        top: 65px;
+        left: 0;
+        width: 100%;
+        background: var(--primary);
+        flex-direction: column;
+        padding: 25px;
+        gap: 18px;
+    }
+
+    .nav-links.active {
+        display: flex;
+    }
+
+    .hero-container {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .hero-buttons {
+        justify-content: center;
+    }
+
+    .about-grid,
+    .cards,
+    .contact-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .hero h1 {
+        font-size: 32px;
+    }
+}
+</style>
+</head>
+
+<body>
+
+<header>
+<nav>
+    <a href="#home" class="logo">Dr. Getnet <span>Tesfaw</span></a>
+
+    <button class="menu-toggle" onclick="toggleMenu()">☰</button>
+
+    <ul class="nav-links" id="navLinks">
+        <li><a href="#home">Home</a></li>
+        <li><a href="#about">About</a></li>
+        <li><a href="#research">Research</a></li>
+        <li><a href="#education">Education</a></li>
+        <li><a href="#projects">Projects</a></li>
+        <li><a href="#publications">Publications</a></li>
+        <li><a href="#contact">Contact</a></li>
+    </ul>
+</nav>
+</header>
+
+<!-- HERO -->
+<section class="hero" id="home">
+<div class="hero-container">
+
+    <!-- Replace profile.jpg with your actual photograph -->
+    <img src="profile.jpg"
+         alt="Dr. Getnet Tesfaw Demsie"
+         class="profile-image">
+
+    <div>
+        <h1>Dr. Getnet Tesfaw Demsie</h1>
+        <h2>Assistant Professor of Social Psychology</h2>
+
+        <p>
+            Department of Psychology, Wollo University,
+            Dessie, Ethiopia.
+            Researcher, academic and social psychologist
+            committed to understanding psychosocial well-being,
+            childhood experiences, forced displacement,
+            migration and social inclusion.
+        </p>
+
+        <div class="hero-buttons">
+            <a href="#about" class="btn btn-primary">Explore My Profile</a>
+            <a href="#contact" class="btn btn-outline">Contact Me</a>
+        </div>
+    </div>
+
+</div>
+</section>
+
+<!-- ABOUT -->
+<section id="about">
+<div class="container">
+
+    <div class="section-title">
+        <h2>About Me</h2>
+        <span></span>
+        <p>Academic Profile and Professional Biography</p>
+    </div>
+
+    <div class="about-grid">
+
+        <div class="about-text">
+            <p>
+                Dr. Getnet Tesfaw Demsie is an Assistant Professor
+                of Social Psychology at Wollo University, Ethiopia.
+                He holds a PhD in Social Psychology from
+                Addis Ababa University.
+            </p>
+
+            <p>
+                His doctoral research examined the behavioural
+                outcomes of children left behind due to parental
+                migration in Southern Wollo, Ethiopia.
+            </p>
+
+            <p>
+                His academic and research work focuses on the
+                psychosocial experiences of children and youth
+                affected by armed conflict, forced displacement
+                and migration. He is particularly interested in
+                psychosocial well-being, social relationships,
+                social inclusion, childhood adversity and
+                peacebuilding.
+            </p>
+
+            <p>
+                He has experience in qualitative and mixed-methods
+                research, participatory approaches, arts-based
+                research, academic teaching and community-engaged
+                research.
+            </p>
+        </div>
+
+        <div class="info-card">
+            <h3>Professional Information</h3>
+            <p><strong>Position:</strong> Assistant Professor</p>
+            <p><strong>Specialization:</strong> Social Psychology</p>
+            <p><strong>Institution:</strong> Wollo University</p>
+            <p><strong>Department:</strong> Psychology</p>
+            <p><strong>Location:</strong> Dessie, Ethiopia</p>
+            <p><strong>Qualification:</strong> PhD in Social Psychology</p>
+        </div>
+
+    </div>
+</div>
+</section>
+
+<!-- RESEARCH -->
+<section id="research" class="light-section">
+<div class="container">
+
+    <div class="section-title">
+        <h2>Research Interests</h2>
+        <span></span>
+        <p>Research areas and scholarly expertise</p>
+    </div>
+
+    <div class="cards">
+
+        <div class="card">
+            <h3>Social Psychology of Conflict</h3>
+            <p>
+                Social relationships, intergroup relations,
+                collective experiences, conflict and
+                peacebuilding.
+            </p>
+        </div>
+
+        <div class="card">
+            <h3>Forced Displacement and Migration</h3>
+            <p>
+                Internal displacement, migration,
+                lived experiences, social exclusion
+                and reintegration.
+            </p>
+        </div>
+
+        <div class="card">
+            <h3>Children and Youth</h3>
+            <p>
+                Childhood adversity, disrupted childhoods,
+                youth agency and psychosocial experiences.
+            </p>
+        </div>
+
+        <div class="card">
+            <h3>Psychosocial Well-being</h3>
+            <p>
+                Mental health and psychosocial support,
+                social support, resilience and well-being.
+            </p>
+        </div>
+
+        <div class="card">
+            <h3>Arts-Based Participatory Research</h3>
+            <p>
+                Drawing, storytelling and participatory
+                approaches to understanding lived experiences.
+            </p>
+        </div>
+
+        <div class="card">
+            <h3>Social Inclusion and Peacebuilding</h3>
+            <p>
+                Belonging, social connectedness,
+                host-community relationships and
+                inclusive peacebuilding.
+            </p>
+        </div>
+
+    </div>
+</div>
+</section>
+
+<!-- EDUCATION -->
+<section id="education">
+<div class="container">
+
+    <div class="section-title">
+        <h2>Education and Academic Background</h2>
+        <span></span>
+    </div>
+
+    <div class="timeline">
+
+        <div class="timeline-item">
+            <h3>PhD in Social Psychology</h3>
+            <p class="date">Addis Ababa University, Ethiopia</p>
+            <p>
+                Doctoral research on the behavioural outcomes
+                of children left behind due to parental
+                migration in Southern Wollo.
+            </p>
+        </div>
+
+        <div class="timeline-item">
+            <h3>MA in Social Psychology</h3>
+            <p class="date">Addis Ababa University, Ethiopia</p>
+            <p>Advanced study in social psychology and research.</p>
+        </div>
+
+        <div class="timeline-item">
+            <h3>BA in Educational Psychology</h3>
+            <p class="date">Ethiopia</p>
+            <p>
+                Undergraduate training in educational
+                psychology and human behaviour.
+            </p>
+        </div>
+
+    </div>
+</div>
+</section>
+
+<!-- EXPERIENCE -->
+<section class="light-section">
+<div class="container">
+
+    <div class="section-title">
+        <h2>Academic and Professional Experience</h2>
+        <span></span>
+    </div>
+
+    <div class="timeline">
+
+        <div class="timeline-item">
+            <h3>Assistant Professor of Social Psychology</h3>
+            <p class="date">Wollo University, Ethiopia</p>
+            <p>
+                Teaching, research, student supervision,
+                academic engagement and community-based
+                research activities.
+            </p>
+        </div>
+
+        <div class="timeline-item">
+            <h3>Visiting Researcher</h3>
+            <p class="date">Ghent University, Belgium</p>
+            <p>
+                Participated in research activities,
+                academic seminars and scholarly presentations
+                related to migration and social research.
+            </p>
+        </div>
+
+        <div class="timeline-item">
+            <h3>International Summer School</h3>
+            <p class="date">University of Bergen, Norway</p>
+            <p>
+                Specialized academic training on
+                Contested Childhoods in the Context
+                of Migration.
+            </p>
+        </div>
+
+    </div>
+</div>
+</section>
+
+<!-- PROJECTS -->
+<section id="projects">
+<div class="container">
+
+    <div class="section-title">
+        <h2>Research Projects and Grants</h2>
+        <span></span>
+        <p>Selected research engagements and scholarly initiatives</p>
+    </div>
+
+    <div class="cards">
+
+        <div class="card">
+            <h3>APDD Individual Research Fund</h3>
+            <p>
+                2025 Research Fund Fellow.
+                Research engagement concerning children,
+                youth and internally displaced populations
+                in conflict-affected areas.
+            </p>
+        </div>
+
+        <div class="card">
+            <h3>CODESRIA MRI 2026</h3>
+            <p>
+                Selected for the Meaning-making Research
+                Initiatives focusing on children's and
+                youths' experiences of waiting in
+                protracted conflict.
+            </p>
+        </div>
+
+        <div class="card">
+            <h3>Forced Displacement and Migration</h3>
+            <p>
+                Research engagement on displacement,
+                psychosocial well-being, social relationships
+                and inclusion among conflict-affected youth.
+            </p>
+        </div>
+
+        <div class="card">
+            <h3>In-Border and Cross-Border Migration</h3>
+            <p>
+                Research collaboration examining the
+                dynamics, impacts and prospects of migration
+                in South Wollo, Ethiopia.
+            </p>
+        </div>
+
+        <div class="card">
+            <h3>Arts-Based Participatory Research</h3>
+            <p>
+                Exploring children's and youths' lived
+                experiences, temporalities of waiting
+                and future aspirations in displacement settings.
+            </p>
+        </div>
+
+        <div class="card">
+            <h3>Conflict-Affected Communities</h3>
+            <p>
+                Research on collective psychosocial costs,
+                social networks, host-community relations
+                and social inclusion.
+            </p>
+        </div>
+
+    </div>
+</div>
+</section>
+
+<!-- PUBLICATIONS -->
+<section id="publications" class="light-section">
+<div class="container">
+
+    <div class="section-title">
+        <h2>Selected Publications</h2>
+        <span></span>
+        <p>Peer-reviewed publications and scholarly contributions</p>
+    </div>
+
+    <div class="publication">
+        <h3>
+            Internally Displaced Children Due to Armed Conflict
+            in Northeast Ethiopia
+        </h3>
+        <p>
+            2024. Child & Family Social Work.
+            Research on the experiences of children affected
+            by internal displacement and armed conflict.
+        </p>
+        <a href="https://doi.org/10.1002/crq.21430"
+           target="_blank">View Publication →</a>
+    </div>
+
+    <div class="publication">
+        <h3>
+            COVID-19 and Children Left Behind by Parental Migration
+            in Southern Wollo
+        </h3>
+        <p>
+            2025. Springer book chapter.
+            Examining the experiences of children affected
+            by parental migration during the pandemic.
+        </p>
+    </div>
+
+    <div class="publication">
+        <h3>
+            Psychosocial Problems in Wollo Woredas
+        </h3>
+        <p>
+            2023. Journal of Ethiopian Studies.
+            Research addressing psychosocial challenges
+            in local communities.
+        </p>
+    </div>
+
+    <div class="publication">
+        <h3>
+            Home to Camp: Redirecting Ethiopian Peacebuilding
+            through Displaced Youths' Voices
+        </h3>
+        <p>
+            2026. Kujenga Amani / Social Science Research Council.
+            An essay highlighting displaced youths' voices
+            in peacebuilding.
+        </p>
+    </div>
+
+    <div class="publication">
+        <h3>
+            Learning Through Art: Arts-Based Participatory
+            Research with Conflict-Affected Children and Youth
+        </h3>
+        <p>
+            Research methods manuscript in development.
+        </p>
+    </div>
+
+    <p style="text-align:center; margin-top:30px;">
+        <a class="btn btn-primary"
+           href="https://scholar.google.com/citations?user=DKHM6HsAAAAJ&hl=en"
+           target="_blank">
+           View Google Scholar Profile
+        </a>
+    </p>
+
+</div>
+</section>
+
+<!-- PROFESSIONAL EXPERTISE -->
+<section>
+<div class="container">
+
+    <div class="section-title">
+        <h2>Research and Technical Skills</h2>
+        <span></span>
+    </div>
+
+    <div class="cards">
+
+        <div class="card">
+            <h3>Research Methodology</h3>
+            <p>
+                Qualitative research, quantitative research,
+                mixed-methods research and participatory
+                research designs.
+            </p>
+        </div>
+
+        <div class="card">
+            <h3>Data Analysis</h3>
+            <p>
+                SPSS, NVivo, thematic analysis,
+                qualitative coding and synthesis.
+            </p>
+        </div>
+
+        <div class="card">
+            <h3>Community Engagement</h3>
+            <p>
+                Community-based research, participatory
+                approaches, stakeholder engagement
+                and knowledge dissemination.
+            </p>
+        </div>
+
+    </div>
+</div>
+</section>
+
+<!-- CONTACT -->
+<section id="contact" class="contact">
+<div class="container">
+
+    <div class="section-title">
+        <h2>Contact and Academic Collaboration</h2>
+        <span></span>
+        <p style="color:#dce6ed;">
+            Open to academic collaboration, research partnerships,
+            scholarly exchange and interdisciplinary research.
+        </p>
+    </div>
+
+    <div class="contact-grid">
+
+        <div class="contact-item">
+            <h3>Institution</h3>
+            <p>Department of Psychology</p>
+            <p>Wollo University</p>
+            <p>Dessie, Ethiopia</p>
+        </div>
+
+        <div class="contact-item">
+            <h3>Research Profile</h3>
+            <p>
+                <a href="https://scholar.google.com/citations?user=DKHM6HsAAAAJ&hl=en"
+                   target="_blank">
+                   Google Scholar Profile
+                </a>
+            </p>
+        </div>
+
+        <div class="contact-item">
+            <h3>Academic Interests</h3>
+            <p>Research Collaboration</p>
+            <p>Academic Exchange</p>
+            <p>Joint Publications</p>
+        </div>
+
+    </div>
+
+</div>
+</section>
+
+<footer>
+    <p>
+        &copy; <span id="year"></span>
+        Dr. Getnet Tesfaw Demsie.
+        All Rights Reserved.
+    </p>
+    <p>Academic Portfolio | Social Psychology | Research</p>
+</footer>
+
+<script>
+function toggleMenu() {
+    document.getElementById("navLinks").classList.toggle("active");
+}
+
+document.querySelectorAll(".nav-links a").forEach(link => {
+    link.addEventListener("click", () => {
+        document.getElementById("navLinks").classList.remove("active");
+    });
+});
+
+document.getElementById("year").textContent =
+    new Date().getFullYear();
+</script>
+
+</body>
+</html>
